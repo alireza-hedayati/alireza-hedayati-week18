@@ -1,0 +1,69 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  background-color: #21212121; 
+  display: flex;
+  backdrop-filter: blur(2px);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #11324d;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.close{
+  width: 100px;
+}
+
+.modalContent p{
+  color: #fff;
+  font-size: 24px;
+  padding: 25px 0;
+}
+
+.actions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.actions button{
+  border: none;
+  background-color: snow;
+  padding: 8px 18px;
+  border-radius: 10px;
+  transition: background .08s ease;
+  color: #fff;
+}
+
+.actions .deleteBtn{
+  background: #d20707;
+}
+
+.actions .cancleBtn{
+  background:gray
+}
+
+.actions .deleteBtn:hover{
+  background: #910505;
+}
+.actions .cancleBtn:hover{
+  background: #4e4e4e;
+}
