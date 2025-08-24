@@ -11,6 +11,7 @@ function Layout({ children, data, handlePageClick }) {
   const [inputValue, setInputValue] = useState("");
   const { setSearchValue, state } = useProducts();
   const { searchValue } = state;
+const name = localStorage.getItem("username")
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -53,7 +54,7 @@ function Layout({ children, data, handlePageClick }) {
         <div className={styles.profile}>
           <img src={profileImg} alt="عکس پروفایل" />
           <div className={styles.info}>
-            <p>میلاد عظمی</p>
+            <p>{name}</p>
             <p>مدیر</p>
           </div>
         </div>
