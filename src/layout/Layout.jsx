@@ -1,17 +1,17 @@
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
-
 import styles from "../styles/Layout.module.css";
 import profileImg from "../assets/Felix-Vogel-4.png";
 import { useEffect, useState } from "react";
 import { useProducts } from "../context/ProductContext";
 import ReactPaginate from "react-paginate";
 function Layout({ children, data, handlePageClick }) {
+
   const [inputValue, setInputValue] = useState("");
   const { setSearchValue, state } = useProducts();
   const { searchValue } = state;
-
+const name = localStorage.getItem("username")
   useEffect(() => {
     const handler = setTimeout(() => {
       setSearchValue(inputValue.toLowerCase().trim());
@@ -53,7 +53,7 @@ function Layout({ children, data, handlePageClick }) {
         <div className={styles.profile}>
           <img src={profileImg} alt="عکس پروفایل" />
           <div className={styles.info}>
-            <p>میلاد عظمی</p>
+            <p>{name}</p>
             <p>مدیر</p>
           </div>
         </div>
@@ -78,3 +78,6 @@ function Layout({ children, data, handlePageClick }) {
 }
 
 export default Layout;
+
+
+

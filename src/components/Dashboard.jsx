@@ -11,19 +11,14 @@ import AddModal from "./AddModal";
 import { TailSpin } from "react-loader-spinner";
 
 function Dashboard() {
-  const navigate = useNavigate();
+
   const { state } = useProducts();
   const { searchValue } = state;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    const token = localStorage.getItem("accessToken");
-    if (!token) {
-      navigate("/login", { replace: true });
-    }
-  }, [navigate]);
+  
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["products", currentPage],
